@@ -123,10 +123,37 @@
       "id": "Car",
       "nombre": "Carmen Alemán",
       "cargo": "DIRECTORA ADMINISTRATIVA",
-      "foto": "assets/img/Profile photo Yesika González 2026",
-      "telefono": "+525564672045",
-      "email": "yesika.gonzalez@fase2.com.mx",
-      "whatsapp": "525564672045"
+      "foto": "assets/img/Profile photo Carmen Alemán 2026",
+      "telefono": "+525544496559",
+      "email": "carmen.alemán@fase2.com.mx",
+      "whatsapp": "525544496559"
+   },
+   {
+      "id": "Raúl",
+      "nombre": "Raúl Samaniego",
+      "cargo": "DISEÑADOR INDUSTRIAL",
+      "foto": "assets/img/Profile photo Raúl Samaniego 2026",
+      "telefono": "+525566097740",
+      "email": "carmen.alemán@fase2.com.mx",
+      "whatsapp": "525566097740"
+   },
+   {
+      "id": "Pao",
+      "nombre": "Paola Vélez",
+      "cargo": "DISEÑADOR INDUSTRIAL",
+      "foto": "assets/img/Profile photo Paola Vélez 2026",
+      "telefono": "+525554193277",
+      "email": "carmen.alemán@fase2.com.mx",
+      "whatsapp": "52555419327"
+   },
+   {
+      "id": "Osma",
+      "nombre": "Osmani Maya",
+      "cargo": "Logística y producción",
+      "foto": "assets/img/Profile photo Osmani Maya 2026 copia",
+      "telefono": "+525545174054",
+      "email": "carmen.alemán@fase2.com.mx",
+      "whatsapp": "525545174054"
    },
   ]
 }
