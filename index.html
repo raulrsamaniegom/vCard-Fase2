@@ -6,12 +6,12 @@
     <title>Tarjeta Digital - Fase 2</title>
     <style>
         :root {
-            --primary-color: #23398D; 
-            --secondary-color: #1E1E1C;
-            --bg-color: #EEEDED;
+            --primary-color: #0a1e5e; 
+            --secondary-color: #ffffff;
+            --bg-color: #f4f4f9;
         }
         body {
-            font-family: Roboto;
+            font-family: sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
@@ -24,143 +24,111 @@
             max-width: 450px;
             background-color: var(--secondary-color);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            /* min-height: 100vh;  <-- ESTA LÍNEA LA ELIMINAMOS */
             padding-bottom: 30px;
         }
         
-        /* CAMBIOS CLAVE PARA FOTO GRANDE */
-        .header {
-            padding: 0;
-            background-color: white; 
-            text-align: center;
-        }
-        .profile-pic {
-            width: 100%;       /* Ocupa todo el ancho del celular */
-            height: auto;      /* Mantiene la proporción 1080x1080 sin deformar */
-            aspect-ratio: 1/1; /* Asegura que sea cuadrada */
-            object-fit: cover;
-            display: block;
-            border-radius: 0;  /* Quitamos el círculo */
-            border: none;
-        }
+        /* Estilos de la FOTO DE PERFIL (NO SE TOCAN) */
+        .header { padding: 0; background-color: white; text-align: center; }
+        .profile-pic { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; display: block; }
         .info-block {
             padding: 20px 20px 10px 20px;
-            background-color: var(--primary-color); /* El azul pasa al bloque de texto */
-            color: white;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            margin-top: -5px; /* Elimina linea blanca fantasma si aparece */
-        }
-        
-        .name {
-            font-size: 1.8rem;
-            margin: 0;
-            font-weight: bold;
-        }
-        .role {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        .company {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-        .actions {
-            padding: 25px 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .btn-primary {
             background-color: var(--primary-color);
             color: white;
-            grid-column: span 2;
-            font-size: 1.1rem;
+            border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
+            margin-top: -5px;
         }
-        .btn-secondary {
-            background-color: #e9ecef;
-            color: var(--primary-color);
+        
+        .name { font-size: 1.8rem; margin: 0; font-weight: bold; }
+        .role { font-size: 1.1rem; opacity: 0.9; margin-top: 5px; }
+        .company { font-size: 0.9rem; opacity: 0.8; margin-top: 5px; }
+        
+        .actions { padding: 25px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .btn {
+            display: flex; align-items: center; justify-content: center; padding: 12px;
+            border-radius: 10px; text-decoration: none; font-weight: bold; transition: background-color 0.2s;
         }
-        .section-title {
-            padding: 0 20px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        .links-list {
-            list-style: none;
-            padding: 0 20px;
-            margin-bottom: 20px;
-        }
-        .links-list li {
-            margin-bottom: 10px;
-        }
-        .link-item {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
+        .btn-primary { background-color: var(--primary-color); color: white; grid-column: span 2; font-size: 1.1rem; }
+        .btn-secondary { background-color: #e9ecef; color: var(--primary-color); }
+        
+        .section-title { padding: 0 20px; margin-bottom: 10px; color: var(--primary-color); font-weight: bold; }
+        .links-list { list-style: none; padding: 0 20px; margin-bottom: 20px; }
+        .links-list li { margin-bottom: 10px; }
+        .link-item { display: flex; align-items: center; text-decoration: none; color: #333; padding: 10px; background-color: #f8f9fa; border-radius: 8px; }
+        
+        /* Estilos de la GALERÍA (Miniaturas) */
         .gallery {
-            padding: 20px 20px 0 20px; /* Quitamos padding inferior */
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 10px; /* Antes era 40px, lo bajamos a 10px */
+            padding: 20px 20px 0 20px;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 10px; margin-bottom: 10px; 
         }
         .gallery img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
+            width: 100%; height: 120px; object-fit: cover; border-radius: 8px;
+            cursor: pointer; transition: transform 0.2s;
         }
+        .gallery img:active { transform: scale(0.95); }
+
+        /* --- NUEVOS ESTILOS PARA EL MODAL (PANTALLA COMPLETA) --- */
+        .modal {
+            display: none; /* Oculto al inicio */
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; top: 0;
+            width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.95); /* Fondo negro casi total */
+            align-items: center; justify-content: center;
+        }
+
+        /* LA IMAGEN EN GRANDE */
+        .modal-content {
+            display: block;
+            width: 100%; /* Intenta ocupar todo el ancho */
+            max-height: 95vh; /* Pero no te pases del alto de la pantalla */
+            
+            /* ¡ESTA ES LA CLAVE PARA FOTOS MIXTAS! */
+            object-fit: contain; /* Muestra la foto entera sin recortar, sea vertical u horizontal */
+            
+            animation-name: zoom; animation-duration: 0.3s;
+        }
+
+        /* Botón Cerrar (X) */
+        .close {
+            position: absolute; top: 20px; right: 30px;
+            color: #f1f1f1; font-size: 40px; font-weight: bold;
+            cursor: pointer; z-index: 2001;
+        }
+        @keyframes zoom { from {transform:scale(0.8); opacity: 0;} to {transform:scale(1); opacity: 1;} }
     </style>
 </head>
 <body>
     <div class="container" id="loading">Cargando tarjeta...</div>
     <div class="container" id="card-content" style="display: none;">
-        
         <header class="header">
             <img src="" alt="Foto de perfil" class="profile-pic" id="profile-img">
-            
             <div class="info-block">
                 <h1 class="name" id="profile-name">Nombre Apellido</h1>
                 <p class="role" id="profile-role">Cargo</p>
                 <p class="company" id="profile-company">Empresa</p>
             </div>
         </header>
-
         <section class="actions">
             <a href="#" class="btn btn-primary" id="btn-save">Guardar Contacto</a>
             <a href="#" class="btn btn-secondary" id="btn-call">Llamar</a>
             <a href="#" class="btn btn-secondary" id="btn-wa">WhatsApp</a>
             <a href="#" class="btn btn-secondary" id="btn-email" style="grid-column: span 2;">Enviar Correo</a>
         </section>
-
         <h3 class="section-title">Enlaces</h3>
         <ul class="links-list">
             <li><a href="#" class="link-item" id="link-web" target="_blank">🌐 <span id="text-web">Sitio Web</span></a></li>
             <li><a href="#" class="link-item" id="link-insta" target="_blank">📸 <span id="text-insta">Instagram</span></a></li>
         </ul>
-
         <h3 class="section-title">Galería</h3>
         <div class="gallery" id="gallery-container">
             </div>
+    </div>
+
+    <div id="image-modal" class="modal">
+        <span class="close" id="close-modal">&times;</span>
+        <img class="modal-content" id="img-expanded">
     </div>
 
     <script src="script.js"></script>
