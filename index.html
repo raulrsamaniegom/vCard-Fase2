@@ -30,17 +30,26 @@
         /* Estilos de la FOTO DE PERFIL */
         .header { padding: 0; background-color: white; text-align: center; }
         .profile-pic { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; display: block; }
+        
+        /* BLOQUE AZUL CON SLOGAN */
         .info-block {
-            padding: 20px 20px 10px 20px;
+            padding: 25px 30px; /* Un poco más de aire */
             background-color: var(--primary-color);
             color: white;
             border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
             margin-top: -5px;
+            text-align: center;
         }
         
-        .name { font-size: 1.8rem; margin: 0; font-weight: bold; }
-        .role { font-size: 1.1rem; opacity: 0.9; margin-top: 5px; }
-        .company { font-size: 0.9rem; opacity: 0.8; margin-top: 5px; }
+        /* Nuevo Estilo para el Slogan */
+        .slogan {
+            margin: 0;
+            font-size: 1rem; /* Tamaño equilibrado */
+            line-height: 1.5;
+            font-weight: 600; /* Seminegrilla */
+            text-transform: uppercase; /* Todo mayúsculas */
+            letter-spacing: 1px; /* Espaciado elegante entre letras */
+        }
         
         .actions { padding: 25px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .btn {
@@ -55,7 +64,7 @@
         .links-list li { margin-bottom: 10px; }
         .link-item { display: flex; align-items: center; text-decoration: none; color: #333; padding: 10px; background-color: #f8f9fa; border-radius: 8px; }
         
-        /* Estilos de la GALERÍA (Miniaturas) */
+        /* Estilos de la GALERÍA */
         .gallery {
             padding: 20px 20px 0 20px;
             display: grid; grid-template-columns: repeat(2, 1fr);
@@ -64,36 +73,26 @@
         .gallery img {
             width: 100%; height: 120px; object-fit: cover; border-radius: 8px;
             cursor: pointer; transition: transform 0.2s;
-            -webkit-tap-highlight-color: transparent; /* Quita el flash azul en Android/iOS */
+            -webkit-tap-highlight-color: transparent; 
         }
         .gallery img:active { transform: scale(0.95); }
 
-        /* --- ESTILOS PARA EL MODAL (PANTALLA COMPLETA) --- */
+        /* MODAL */
         .modal {
-            display: none; /* Importante: Oculto al inicio */
-            position: fixed; 
-            z-index: 9999; /* Z-index altísimo para que nada lo tape */
-            left: 0; top: 0;
-            width: 100%; height: 100%; 
+            display: none; position: fixed; z-index: 9999; 
+            left: 0; top: 0; width: 100%; height: 100%; 
             background-color: rgba(0,0,0,0.95);
-            align-items: center; justify-content: center;
-            backdrop-filter: blur(5px);
+            align-items: center; justify-content: center; backdrop-filter: blur(5px);
         }
-
         .modal-content {
-            display: block;
-            width: 100%;
-            max-height: 90vh;
-            object-fit: contain; /* Esto asegura que NO se corte */
-            animation-name: zoom; animation-duration: 0.3s;
+            display: block; width: 100%; max-height: 90vh;
+            object-fit: contain; animation-name: zoom; animation-duration: 0.3s;
         }
-
         .close {
             position: absolute; top: 20px; right: 30px;
             color: #f1f1f1; font-size: 40px; font-weight: bold;
             cursor: pointer; z-index: 10000;
-            background: rgba(0,0,0,0.5); /* Fondo para que se vea mejor la X */
-            width: 50px; height: 50px;
+            background: rgba(0,0,0,0.5); width: 50px; height: 50px;
             text-align: center; line-height: 50px; border-radius: 50%;
         }
         @keyframes zoom { from {transform:scale(0.8); opacity: 0;} to {transform:scale(1); opacity: 1;} }
@@ -105,9 +104,7 @@
         <header class="header">
             <img src="" alt="Foto de perfil" class="profile-pic" id="profile-img">
             <div class="info-block">
-                <h1 class="name" id="profile-name">Nombre Apellido</h1>
-                <p class="role" id="profile-role">Cargo</p>
-                <p class="company" id="profile-company">Empresa</p>
+                <p class="slogan">Donde la creatividad y la estrategia impulsan tu marca</p>
             </div>
         </header>
         <section class="actions">
@@ -132,14 +129,10 @@
     </div>
 
     <script>
-        // Declaramos variables globales para el modal
         const modal = document.getElementById('image-modal');
         const modalImg = document.getElementById('img-expanded');
 
-        // Función para cerrar el modal (se llama desde el HTML)
-        function cerrarModal() {
-            modal.style.display = "none";
-        }
+        function cerrarModal() { modal.style.display = "none"; }
 
         document.addEventListener('DOMContentLoaded', () => {
             const loadingDiv = document.getElementById('loading');
@@ -160,13 +153,11 @@
 
                     if (!user) { loadingDiv.textContent = 'Usuario no encontrado.'; return; }
 
-                    // 3. Rellenar Textos
+                    // 3. Rellenar SOLO Imagen y Título de Pestaña (Ya no texto redundante)
                     document.title = `${user.nombre} - ${global.empresa}`;
                     document.getElementById('profile-img').src = user.foto;
-                    document.getElementById('profile-name').textContent = user.nombre;
-                    document.getElementById('profile-role').textContent = user.cargo;
-                    document.getElementById('profile-company').textContent = global.empresa;
                     
+                    // Botones y Enlaces
                     document.getElementById('btn-call').href = `tel:${user.telefono}`;
                     document.getElementById('btn-wa').href = `https://wa.me/${user.whatsapp}`;
                     document.getElementById('btn-email').href = `mailto:${user.email}`;
@@ -175,20 +166,17 @@
                     document.getElementById('link-insta').href = global.instagram_url;
                     document.getElementById('text-insta').textContent = global.instagram_usuario;
 
-                    // 4. GALERÍA CON CLIC DIRECTO
+                    // 4. Galería con Clic
                     const galleryContainer = document.getElementById('gallery-container');
                     global.galeria.forEach(imgSrc => {
                         const img = document.createElement('img');
                         img.src = imgSrc;
                         img.alt = "Imagen Galería";
-                        
-                        // EVENTO DE CLIC
                         img.onclick = function(e) {
-                            e.stopPropagation(); // Evita conflictos
-                            modal.style.display = "flex"; // Abrir ventana
-                            modalImg.src = this.src; // Poner foto grande
+                            e.stopPropagation(); 
+                            modal.style.display = "flex"; 
+                            modalImg.src = this.src; 
                         };
-                        
                         galleryContainer.appendChild(img);
                     });
 
