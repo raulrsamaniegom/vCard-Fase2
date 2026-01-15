@@ -21,10 +21,11 @@
         }
         .container {
             width: 100%;
-            max-width: 450px; /* Un poco más ancho para lucir la foto */
+            max-width: 450px;
             background-color: var(--secondary-color);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            min-height: 100vh;
+            /* min-height: 100vh;  <-- ESTA LÍNEA LA ELIMINAMOS */
+            padding-bottom: 30px;
         }
         
         /* CAMBIOS CLAVE PARA FOTO GRANDE */
@@ -116,11 +117,11 @@
             border-radius: 8px;
         }
         .gallery {
-            padding: 20px;
+            padding: 20px 20px 0 20px; /* Quitamos padding inferior */
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            margin-bottom: 40px; 
+            margin-bottom: 10px; /* Antes era 40px, lo bajamos a 10px */
         }
         .gallery img {
             width: 100%;
