@@ -1,0 +1,84 @@
+{
+  "global": {
+    "empresa": "Fase 2 Eventos y Marcas",
+    "sitio_web": "https://www.fase2.com.mx",
+    "sitio_web_texto": "www.fase2.com.mx",
+    "instagram_url": "https://www.instagram.com/fase2_eventosymarcas/",
+    "instagram_usuario": "@fase2_eventosymarcas",
+    "galeria": [
+      "assets/img/Stranger things 1.png",
+      "assets/img/Stranger things 2.png",
+      "assets/img/Actinver.jpg",
+      "assets/img/Flanax.jpg",
+      "assets/img/Eternal.jpg",
+      "assets/img/Skandia.jpg",
+      
+    ]
+  },
+  "usuarios": [
+    {
+      "id": "Yatz",
+      "nombre": "Yatzkara Mosocoso",
+      "cargo": "CEO",
+      "foto": "assets/img/Profile photo Yatzkara Moscoso 2026",
+      "telefono": "+525540840446",
+      "email": "yatz@fase2.com.mx",
+      "whatsapp": "525540840446"
+    },
+    {
+      "id": "Jessy",
+      "nombre": "Yessica Cardona",
+      "cargo": "PRODCUTORA CREATIVA",
+      "foto": "assets/img/Profile photo Jessica Cardona 2026",
+          "email": "jessica.cardona@fase2.com.mx",
+    }
+    {
+      "id": "Bella",
+      "nombre": "Bella Díaz",
+      "cargo": "ASISTENTE DE DIRECCIÓN GENERAL",
+      "foto": "assets/img/Profile photo Bella Díaz 2026",
+      "email": "bella.diaz@fase2.com.mx",
+    },
+    {
+      "id": "Ady",
+      "nombre": "Adriana Hermosillo",
+      "cargo": "DISEÑADORA GRÁFICA",
+      "foto": "assets/img/Profile photo Ady Hermosillo 2026 copia",
+      "email": "adriana.hermosillo@fase2.com.mx",
+    },
+    {
+      "id": "Beca",
+      "nombre": "Rebeca Rivera",
+      "cargo": "MEETING PLANNER",
+      "foto": "assets/img/Profile photo Rebeca Rivera 2026",
+      "email": "rebeca.rivera@fase2.com.mx",
+    },
+    {
+      "id": "Ari",
+      "nombre": "Ariadna Guerra",
+      "cargo": "GERENTE DE GRUPOS Y CONVENCIONES",
+      "foto": "assets/img/Profile photo Ariadna Guerra 2026",
+      "telefono": "+525560721954",
+      "email": "ariadna.guerra@fase2.com.mx",
+      "whatsapp": "525560721954"
+    },
+    {
+      "id": "Juan",
+      "nombre": "Juan Vázquez",
+      "cargo": "PRODUCTOR CREATIVO",
+      "foto": "assets/img/Profile photo Juan Vázquez 2026",
+      "telefono": "+525539709212",
+      "email": "juan.vazquez@fase2.com.mx",
+      "whatsapp": "525539709212"
+    },
+        {
+      "id": "Juan",
+      "nombre": "Juan Vázquez",
+      "cargo": "PRODUCTOR CREATIVO",
+      "foto": "assets/img/Profile photo Juan Vázquez 2026",
+      "telefono": "+525539709212",
+      "email": "juan.vazquez@fase2.com.mx",
+      "whatsapp": "525539709212"
+    },
+  ]
+}
