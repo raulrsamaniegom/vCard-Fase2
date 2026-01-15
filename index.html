@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital - Fase 2</title>
+    <style>
+        :root {
+            --primary-color: #23398D; 
+            --secondary-color: #1E1E1C;
+            --bg-color: #EEEDED;
+        }
+        body {
+            font-family: Roboto;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px; /* Un poco más ancho para lucir la foto */
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+        
+        /* CAMBIOS CLAVE PARA FOTO GRANDE */
+        .header {
+            padding: 0;
+            background-color: white; 
+            text-align: center;
+        }
+        .profile-pic {
+            width: 100%;       /* Ocupa todo el ancho del celular */
+            height: auto;      /* Mantiene la proporción 1080x1080 sin deformar */
+            aspect-ratio: 1/1; /* Asegura que sea cuadrada */
+            object-fit: cover;
+            display: block;
+            border-radius: 0;  /* Quitamos el círculo */
+            border: none;
+        }
+        .info-block {
+            padding: 20px 20px 10px 20px;
+            background-color: var(--primary-color); /* El azul pasa al bloque de texto */
+            color: white;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-top: -5px; /* Elimina linea blanca fantasma si aparece */
+        }
+        
+        .name {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: bold;
+        }
+        .role {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        .company {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .actions {
+            padding: 25px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            grid-column: span 2;
+            font-size: 1.1rem;
+        }
+        .btn-secondary {
+            background-color: #e9ecef;
+            color: var(--primary-color);
+        }
+        .section-title {
+            padding: 0 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        .links-list {
+            list-style: none;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+        .links-list li {
+            margin-bottom: 10px;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        .gallery {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 40px; 
+        }
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="loading">Cargando tarjeta...</div>
+    <div class="container" id="card-content" style="display: none;">
+        
+        <header class="header">
+            <img src="" alt="Foto de perfil" class="profile-pic" id="profile-img">
+            
+            <div class="info-block">
+                <h1 class="name" id="profile-name">Nombre Apellido</h1>
+                <p class="role" id="profile-role">Cargo</p>
+                <p class="company" id="profile-company">Empresa</p>
+            </div>
+        </header>
+
+        <section class="actions">
+            <a href="#" class="btn btn-primary" id="btn-save">Guardar Contacto</a>
+            <a href="#" class="btn btn-secondary" id="btn-call">Llamar</a>
+            <a href="#" class="btn btn-secondary" id="btn-wa">WhatsApp</a>
+            <a href="#" class="btn btn-secondary" id="btn-email" style="grid-column: span 2;">Enviar Correo</a>
+        </section>
+
+        <h3 class="section-title">Enlaces</h3>
+        <ul class="links-list">
+            <li><a href="#" class="link-item" id="link-web" target="_blank">🌐 <span id="text-web">Sitio Web</span></a></li>
+            <li><a href="#" class="link-item" id="link-insta" target="_blank">📸 <span id="text-insta">Instagram</span></a></li>
+        </ul>
+
+        <h3 class="section-title">Galería</h3>
+        <div class="gallery" id="gallery-container">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
