@@ -11,8 +11,7 @@
       "assets/img/Actinver.jpg",
       "assets/img/Flanax.jpg",
       "assets/img/Eternal.jpg",
-      "assets/img/Skandia.jpg",
-      
+      "assets/img/Skandia.jpg"
     ]
   },
   "usuarios": [
@@ -20,7 +19,7 @@
       "id": "Yatz",
       "nombre": "Yatzkara Mosocoso",
       "cargo": "CEO",
-      "foto": "assets/img/Profile photo Yatzkara Moscoso 2026",
+      "foto": "assets/img/Profile photo Yatzkara Moscoso 2026.png",
       "telefono": "+525540840446",
       "email": "yatz@fase2.com.mx",
       "whatsapp": "525540840446"
@@ -28,36 +27,36 @@
     {
       "id": "Jessy",
       "nombre": "Yessica Cardona",
-      "cargo": "PRODCUTORA CREATIVA",
-      "foto": "assets/img/Profile photo Jessica Cardona 2026",
-          "email": "jessica.cardona@fase2.com.mx",
-    }
+      "cargo": "PRODUCTORA CREATIVA",
+      "foto": "assets/img/Profile photo Jessica Cardona 2026.png",
+      "email": "jessica.cardona@fase2.com.mx"
+    },
     {
       "id": "Bella",
       "nombre": "Bella Díaz",
       "cargo": "ASISTENTE DE DIRECCIÓN GENERAL",
-      "foto": "assets/img/Profile photo Bella Díaz 2026",
-      "email": "bella.diaz@fase2.com.mx",
+      "foto": "assets/img/Profile photo Bella Díaz 2026.png",
+      "email": "bella.diaz@fase2.com.mx"
     },
     {
       "id": "Ady",
       "nombre": "Adriana Hermosillo",
       "cargo": "DISEÑADORA GRÁFICA",
-      "foto": "assets/img/Profile photo Ady Hermosillo 2026 copia",
-      "email": "adriana.hermosillo@fase2.com.mx",
+      "foto": "assets/img/Profile photo Ady Hermosillo 2026 copia.png",
+      "email": "adriana.hermosillo@fase2.com.mx"
     },
     {
       "id": "Beca",
       "nombre": "Rebeca Rivera",
       "cargo": "MEETING PLANNER",
-      "foto": "assets/img/Profile photo Rebeca Rivera 2026",
-      "email": "rebeca.rivera@fase2.com.mx",
+      "foto": "assets/img/Profile photo Rebeca Rivera 2026.png",
+      "email": "rebeca.rivera@fase2.com.mx"
     },
     {
       "id": "Ari",
       "nombre": "Ariadna Guerra",
       "cargo": "GERENTE DE GRUPOS Y CONVENCIONES",
-      "foto": "assets/img/Profile photo Ariadna Guerra 2026",
+      "foto": "assets/img/Profile photo Ariadna Guerra 2026.png",
       "telefono": "+525560721954",
       "email": "ariadna.guerra@fase2.com.mx",
       "whatsapp": "525560721954"
@@ -66,16 +65,16 @@
       "id": "Juan",
       "nombre": "Juan Vázquez",
       "cargo": "PRODUCTOR CREATIVO",
-      "foto": "assets/img/Profile photo Juan Vázquez 2026",
+      "foto": "assets/img/Profile photo Juan Vázquez 2026.png",
       "telefono": "+525539709212",
       "email": "juan.vazquez@fase2.com.mx",
       "whatsapp": "525539709212"
     },
-        {
+    {
       "id": "Jova",
       "nombre": "Jovana Medina",
       "cargo": "Senior Key Account Manager",
-      "foto": "assets/img/Profile photo Jovana Medina 2026",
+      "foto": "assets/img/Profile photo Jovana Medina 2026.png",
       "telefono": "+525538988824",
       "email": "jovana.medina@fase2.com.mx",
       "whatsapp": "525538988824"
@@ -84,7 +83,7 @@
       "id": "Majo",
       "nombre": "Majo Yépez",
       "cargo": "DIRECCIÓN DE PRODUCCIÓN",
-      "foto": "assets/img/Profile photo Majo Yépez 2026 copia",
+      "foto": "assets/img/Profile photo Majo Yépez 2026 copia.png",
       "telefono": "+525580218140",
       "email": "maria.yepez@fase2.com.mx",
       "whatsapp": "525580218140"
@@ -93,67 +92,67 @@
       "id": "Manuel",
       "nombre": "Manuel Anguiano",
       "cargo": "MARKETING DIGITAL",
-      "foto": "assets/img/Profile photo Manuel Anguiano 2026",
-      "email": "manuel.anguiano@fase2.com.mx",
+      "foto": "assets/img/Profile photo Manuel Anguiano 2026.png",
+      "email": "manuel.anguiano@fase2.com.mx"
     },
     {
       "id": "Luis G",
       "nombre": "Luis Gutiérrez",
       "cargo": "MARKETING DIGITAL",
-      "foto": "assets/img/Profile photo Luis Gutiérrez 2026 copia",
-      "email": "luis.gutierrez@fase2.com.mx",
+      "foto": "assets/img/Profile photo Luis Gutiérrez 2026 copia.png",
+      "email": "luis.gutierrez@fase2.com.mx"
     },
     {
       "id": "Miriam",
       "nombre": "Miriam García",
       "cargo": "MARKETING DIGITAL",
-      "foto": "assets/img/Profile photo Miriam  García  2026",
-      "email": "miriam.garcía@fase2.com.mx",
+      "foto": "assets/img/Profile photo Miriam  García  2026.png",
+      "email": "miriam.garcía@fase2.com.mx"
     },
     {
       "id": "Yesika",
       "nombre": "Yesika González",
       "cargo": "Senior Key Account Manager",
-      "foto": "assets/img/Profile photo Yesika González 2026",
+      "foto": "assets/img/Profile photo Yesika González 2026.png",
       "telefono": "+525564672045",
       "email": "yesika.gonzalez@fase2.com.mx",
       "whatsapp": "525564672045"
-   },
-   {
+    },
+    {
       "id": "Car",
       "nombre": "Carmen Alemán",
       "cargo": "DIRECTORA ADMINISTRATIVA",
-      "foto": "assets/img/Profile photo Carmen Alemán 2026",
+      "foto": "assets/img/Profile photo Carmen Alemán 2026.png",
       "telefono": "+525544496559",
       "email": "carmen.alemán@fase2.com.mx",
       "whatsapp": "525544496559"
-   },
-   {
+    },
+    {
       "id": "Raúl",
       "nombre": "Raúl Samaniego",
       "cargo": "DISEÑADOR INDUSTRIAL",
-      "foto": "assets/img/Profile photo Raúl Samaniego 2026",
+      "foto": "assets/img/Profile photo Raúl Samaniego 2026.png",
       "telefono": "+525566097740",
-      "email": "carmen.alemán@fase2.com.mx",
+      "email": "raul.samaniego@fase2.com.mx",
       "whatsapp": "525566097740"
-   },
-   {
+    },
+    {
       "id": "Pao",
       "nombre": "Paola Vélez",
       "cargo": "DISEÑADOR INDUSTRIAL",
-      "foto": "assets/img/Profile photo Paola Vélez 2026",
+      "foto": "assets/img/Profile photo Paola Vélez 2026.png",
       "telefono": "+525554193277",
-      "email": "carmen.alemán@fase2.com.mx",
+      "email": "paola.velez@fase2.com.mx",
       "whatsapp": "52555419327"
-   },
-   {
+    },
+    {
       "id": "Osma",
       "nombre": "Osmani Maya",
       "cargo": "Logística y producción",
-      "foto": "assets/img/Profile photo Osmani Maya 2026 copia",
+      "foto": "assets/img/Profile photo Osmani Maya 2026 copia.png",
       "telefono": "+525545174054",
-      "email": "carmen.alemán@fase2.com.mx",
+      "email": "osmani.maya@fase2.com.mx",
       "whatsapp": "525545174054"
-   }
+    }
   ]
 }
