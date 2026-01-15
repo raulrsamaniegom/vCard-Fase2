@@ -140,16 +140,16 @@
       "id": "Pao",
       "nombre": "Paola Vélez",
       "cargo": "PROJECT MANAGER",
-      "foto": "assets/img/Profile photo Paola Vélez 2026",
-      "telefono": "+525538751320",
-      "email": "fatima.quevedoz@fase2.com.mx",
-      "whatsapp": "5538751320"
+      "foto": "assets/img/Profile photo Paola Vélez 2026.png", 
+      "telefono": "+525554193277", 
+      "email": "paola.velez@fase2.com.mx",
+      "whatsapp": "52555419327"
     },
     {
-      "id": "Fátima",
+      "id": "Fatima",
       "nombre": "Fátima Quevedo",
       "cargo": "New Business",
-      "foto": "assets/img/Profile photo Fátima Quevedo 2026",
+      "foto": "assets/img/Profile photo Fátima Quevedo 2026.png",
       "telefono": "+525538751320",
       "email": "fatima.quevedo@fase2.com.mx",
       "whatsapp": "5538751320"
