@@ -51,13 +51,16 @@
       "nombre": "Bella Díaz",
       "cargo": "ASISTENTE DE DIRECCIÓN GENERAL",
       "foto": "assets/img/Profile photo Bella Díaz 2026.png",
-      "email": "bella.diaz@fase2.com.mx"
+      "telefono": "+525562901989",
+      "email": "bella.diaz@fase2.com.mx",
+      "whatsapp": "525562901989"
     },
     {
       "id": "Ady",
       "nombre": "Adriana Hermosillo",
       "cargo": "DISEÑADORA GRÁFICA",
       "foto": "assets/img/Profile photo Ady Hermosillo 2026 copia.png",
+      "telefono": "+525562901989",
       "email": "adriana.hermosillo@fase2.com.mx"
     },
     {
@@ -65,7 +68,9 @@
       "nombre": "Rebeca Rivera",
       "cargo": "MEETING PLANNER",
       "foto": "assets/img/Profile photo Rebeca Rivera 2026.png",
-      "email": "rebeca.rivera@fase2.com.mx"
+      "telefono": "+525634000368",
+      "email": "rebeca.rivera@fase2.com.mx",
+      "whatsapp": "525634000368"
     },
     {
       "id": "Ari",
@@ -139,7 +144,7 @@
       "cargo": "DIRECTORA ADMINISTRATIVA",
       "foto": "assets/img/Profile photo Carmen Alemán 2026.png",
       "telefono": "+525544496559",
-      "email": "carmen.alemán@fase2.com.mx",
+      "email": "carmen.aleman@fase2.com.mx",
       "whatsapp": "525544496559"
     },
     {
