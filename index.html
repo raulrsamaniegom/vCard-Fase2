@@ -5,100 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta Digital - Fase 2</title>
     <style>
-        :root {
-            --primary-color: #0a1e5e; 
-            --secondary-color: #ffffff;
-            --bg-color: #f4f4f9;
-        }
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: #333;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 450px;
-            background-color: var(--secondary-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding-bottom: 30px;
-        }
-        
-        /* Estilos de la FOTO DE PERFIL */
+        :root { --primary-color: #0a1e5e; --secondary-color: #ffffff; --bg-color: #f4f4f9; }
+        body { font-family: sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: #333; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 450px; background-color: var(--secondary-color); box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding-bottom: 30px; }
         .header { padding: 0; background-color: white; text-align: center; }
         .profile-pic { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; display: block; }
-        
-        /* BLOQUE AZUL CON SLOGAN */
-        .info-block {
-            padding: 25px 30px;
-            background-color: var(--primary-color);
-            color: white;
-            border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
-            margin-top: -5px;
-            text-align: center;
-        }
-        
-        .slogan {
-            margin: 0;
-            font-size: 1rem;
-            line-height: 1.5;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
+        .info-block { padding: 25px 30px; background-color: var(--primary-color); color: white; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; margin-top: -5px; text-align: center; }
+        .slogan { margin: 0; font-size: 1rem; line-height: 1.5; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         .actions { padding: 25px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .btn {
-            display: flex; align-items: center; justify-content: center; padding: 12px;
-            border-radius: 10px; text-decoration: none; font-weight: bold; transition: background-color 0.2s;
-        }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: background-color 0.2s; }
         .btn-primary { background-color: var(--primary-color); color: white; grid-column: span 2; font-size: 1.1rem; }
         .btn-secondary { background-color: #e9ecef; color: var(--primary-color); }
-        
         .section-title { padding: 0 20px; margin-bottom: 10px; color: var(--primary-color); font-weight: bold; }
         .links-list { list-style: none; padding: 0 20px; margin-bottom: 20px; }
         .links-list li { margin-bottom: 10px; }
         .link-item { display: flex; align-items: center; text-decoration: none; color: #333; padding: 10px; background-color: #f8f9fa; border-radius: 8px; }
-        
-        /* Estilos de la GALERÍA */
-        .gallery {
-            padding: 20px 20px 0 20px;
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 10px; margin-bottom: 10px; 
-        }
-        .gallery img {
-            width: 100%; height: 120px; object-fit: cover; border-radius: 8px;
-            cursor: pointer; transition: transform 0.2s;
-            -webkit-tap-highlight-color: transparent; 
-        }
+        .gallery { padding: 20px 20px 0 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px; }
+        .gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: transform 0.2s; -webkit-tap-highlight-color: transparent; }
         .gallery img:active { transform: scale(0.95); }
-
-        /* MODAL */
-        .modal {
-            display: none; position: fixed; z-index: 9999; 
-            left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(0,0,0,0.95);
-            align-items: center; justify-content: center; backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            display: block; width: 100%; max-height: 90vh;
-            object-fit: contain; animation-name: zoom; animation-duration: 0.3s;
-        }
-        .close {
-            position: absolute; top: 20px; right: 30px;
-            color: #f1f1f1; font-size: 40px; font-weight: bold;
-            cursor: pointer; z-index: 10000;
-            background: rgba(0,0,0,0.5); width: 50px; height: 50px;
-            text-align: center; line-height: 50px; border-radius: 50%;
-        }
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+        .modal-content { display: block; width: 100%; max-height: 90vh; object-fit: contain; animation-name: zoom; animation-duration: 0.3s; }
+        .close { position: absolute; top: 20px; right: 30px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000; background: rgba(0,0,0,0.5); width: 50px; height: 50px; text-align: center; line-height: 50px; border-radius: 50%; }
         @keyframes zoom { from {transform:scale(0.8); opacity: 0;} to {transform:scale(1); opacity: 1;} }
     </style>
 </head>
 <body>
-    <div class="container" id="loading">Cargando tarjeta...</div>
+    <div class="container" id="loading" style="padding: 20px; text-align: center; font-weight: bold; color: #0a1e5e;">Cargando tarjeta...</div>
     <div class="container" id="card-content" style="display: none;">
         <header class="header">
             <img src="" alt="Foto de perfil" class="profile-pic" id="profile-img">
@@ -110,6 +42,7 @@
             <a href="#" class="btn btn-primary" id="btn-save">Guardar Contacto</a>
             <a href="#" class="btn btn-secondary" id="btn-call">Llamar</a>
             <a href="#" class="btn btn-secondary" id="btn-wa">WhatsApp</a>
+            
             <a href="#" class="btn btn-secondary" id="btn-email" style="grid-column: span 2;">Enviar Correo</a>
         </section>
         <h3 class="section-title">Enlaces</h3>
@@ -118,8 +51,7 @@
             <li><a href="#" class="link-item" id="link-insta" target="_blank">📸 <span id="text-insta">Instagram</span></a></li>
         </ul>
         <h3 class="section-title">Galería</h3>
-        <div class="gallery" id="gallery-container">
-            </div>
+        <div class="gallery" id="gallery-container"></div>
     </div>
 
     <div id="image-modal" class="modal" onclick="cerrarModal()">
@@ -128,3 +60,140 @@
     </div>
 
     <script>
+        // Manejador de Errores Global (Si el script falla, esto te avisa)
+        window.onerror = function(message, source, lineno, colno, error) {
+            document.getElementById('loading').innerHTML = 
+                '<span style="color:red">ERROR DE SISTEMA:</span><br>' + message;
+        };
+
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('img-expanded');
+
+        function cerrarModal() { modal.style.display = "none"; }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingDiv = document.getElementById('loading');
+            
+            // INTENTO DE EJECUCIÓN
+            try {
+                const contentDiv = document.getElementById('card-content');
+                
+                // 1. Obtener ID
+                const urlParams = new URLSearchParams(window.location.search);
+                const userId = urlParams.get('id');
+
+                if (!userId) { loadingDiv.textContent = 'Error: Falta ID en la URL.'; return; }
+
+                // 2. Cargar Datos
+                fetch('data.json')
+                    .then(response => { 
+                        if (!response.ok) throw new Error('No se pudo leer data.json'); 
+                        return response.json(); 
+                    })
+                    .then(data => {
+                        const user = data.usuarios.find(u => u.id === userId);
+                        const global = data.global;
+
+                        if (!user) { loadingDiv.textContent = 'Usuario no encontrado en la base de datos.'; return; }
+
+                        // 3. Rellenar Datos
+                        document.title = `${user.nombre} - ${global.empresa}`;
+                        document.getElementById('profile-img').src = user.foto;
+                        
+                        // --- LÓGICA DE BOTONES ---
+                        const btnCall = document.getElementById('btn-call');
+                        const btnWa = document.getElementById('btn-wa');
+
+                        if (btnCall) {
+                            if (user.telefono) {
+                                btnCall.href = `tel:${user.telefono}`;
+                                btnCall.style.display = 'flex';
+                            } else {
+                                btnCall.style.display = 'none';
+                            }
+                        }
+
+                        if (btnWa) {
+                            if (user.whatsapp) {
+                                btnWa.href = `https://wa.me/${user.whatsapp}`;
+                                btnWa.style.display = 'flex';
+                            } else {
+                                btnWa.style.display = 'none';
+                            }
+                        }
+                        // -------------------------
+
+                        document.getElementById('btn-email').href = `mailto:${user.email}`;
+                        document.getElementById('link-web').href = global.sitio_web;
+                        document.getElementById('text-web').textContent = global.sitio_web_texto;
+                        document.getElementById('link-insta').href = global.instagram_url;
+                        document.getElementById('text-insta').textContent = global.instagram_usuario;
+
+                        // 4. Galería
+                        const galleryContainer = document.getElementById('gallery-container');
+                        if (global.galeria) {
+                            global.galeria.forEach(imgSrc => {
+                                const img = document.createElement('img');
+                                img.src = imgSrc;
+                                img.alt = "Imagen Galería";
+                                img.onclick = function(e) {
+                                    e.stopPropagation(); 
+                                    modal.style.display = "flex"; 
+                                    modalImg.src = this.src; 
+                                };
+                                galleryContainer.appendChild(img);
+                            });
+                        }
+
+                        // Botón Descarga
+                        const btnSave = document.getElementById('btn-save');
+                        if (btnSave) {
+                            btnSave.addEventListener('click', (e) => {
+                                e.preventDefault(); downloadVCard(user, global);
+                            });
+                        }
+
+                        // ¡ÉXITO! MOSTRAR TARJETA
+                        loadingDiv.style.display = 'none'; 
+                        contentDiv.style.display = 'block';
+                    })
+                    .catch(error => { 
+                        // ERROR EN EL FETCH O JSON
+                        loadingDiv.innerHTML = '<span style="color:red">ERROR DE DATOS:</span><br>' + error.message; 
+                    });
+
+            } catch (err) {
+                // ERROR EN EL CÓDIGO JS
+                loadingDiv.innerHTML = '<span style="color:red">ERROR DE CÓDIGO:</span><br>' + err.message;
+            }
+        });
+
+        function downloadVCard(user, global) {
+            const nameParts = user.nombre.split(' ');
+            const firstName = nameParts[0];
+            const lastName = nameParts.slice(1).join(' ') || '';
+            let vcard = `BEGIN:VCARD
+VERSION:3.0
+N:${lastName};${firstName};;;
+FN:${user.nombre}
+ORG:${global.empresa}
+TITLE:${user.cargo}
+EMAIL;TYPE=WORK:${user.email}
+URL:${global.sitio_web}
+X-SOCIALPROFILE;TYPE=instagram:${global.instagram_usuario}`;
+
+            if (user.telefono) {
+                vcard += `\nTEL;TYPE=CELL:${user.telefono}`;
+            }
+
+            vcard += `\nEND:VCARD`;
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url; link.download = `${user.nombre.replace(' ', '_')}.vcf`;
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
