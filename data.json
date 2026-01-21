@@ -5,7 +5,7 @@
     "sitio_web_texto": "www.fase2.com.mx",
     "instagram_url": "https://www.instagram.com/fase2_eventosymarcas/",
     "instagram_usuario": "@fase2_eventosymarcas",
-"galeria": [
+    "galeria": [
       "assets/img/Stranger things 1.png",
       "assets/img/Stranger things 2.png",
       "assets/img/Actinver.jpg",
@@ -60,7 +60,7 @@
       "nombre": "Adriana Hermosillo",
       "cargo": "DISEÑADORA GRÁFICA",
       "foto": "assets/img/Profile photo Ady Hermosillo 2026 copia.png",
-     "email": "adriana.hermosillo@fase2.com.mx"
+      "email": "adriana.hermosillo@fase2.com.mx"
     },
     {
       "id": "Beca",
@@ -125,17 +125,17 @@
       "id": "Miriam",
       "nombre": "Miriam García",
       "cargo": "MARKETING DIGITAL",
-      "foto": "assets/img/Profile photo Miriam  García  2026.png",
-      "email": "miriam.garcía@fase2.com.mx"
+      "foto": "assets/img/Profile photo Miriam García 2026.png",
+      "email": "miriam.garcia@fase2.com.mx"
     },
     {
       "id": "Yesika",
       "nombre": "Yesika González",
       "cargo": "Senior Key Account Manager",
       "foto": "assets/img/Profile photo Yesika González 2026.png",
-      "telefono": "+52553138288",
+      "telefono": "+5255REVISAR_NUMERO",
       "email": "yesika.gonzalez@fase2.com.mx",
-      "whatsapp": "52553138288"
+      "whatsapp": "5255REVISAR_NUMERO"
     },
     {
       "id": "Car",
