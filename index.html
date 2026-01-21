@@ -33,7 +33,7 @@
         
         /* BLOQUE AZUL CON SLOGAN */
         .info-block {
-            padding: 25px 30px; /* Un poco más de aire */
+            padding: 25px 30px;
             background-color: var(--primary-color);
             color: white;
             border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
@@ -41,14 +41,13 @@
             text-align: center;
         }
         
-        /* Nuevo Estilo para el Slogan */
         .slogan {
             margin: 0;
-            font-size: 1rem; /* Tamaño equilibrado */
+            font-size: 1rem;
             line-height: 1.5;
-            font-weight: 600; /* Seminegrilla */
-            text-transform: uppercase; /* Todo mayúsculas */
-            letter-spacing: 1px; /* Espaciado elegante entre letras */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .actions { padding: 25px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -129,89 +128,3 @@
     </div>
 
     <script>
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('img-expanded');
-
-        function cerrarModal() { modal.style.display = "none"; }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const loadingDiv = document.getElementById('loading');
-            const contentDiv = document.getElementById('card-content');
-            
-            // 1. Obtener ID
-            const urlParams = new URLSearchParams(window.location.search);
-            const userId = urlParams.get('id');
-
-            if (!userId) { loadingDiv.textContent = 'Error: Falta ID.'; return; }
-
-            // 2. Cargar Datos
-            fetch('data.json')
-                .then(response => { if (!response.ok) throw new Error('Error carga JSON'); return response.json(); })
-                .then(data => {
-                    const user = data.usuarios.find(u => u.id === userId);
-                    const global = data.global;
-
-                    if (!user) { loadingDiv.textContent = 'Usuario no encontrado.'; return; }
-
-                    // 3. Rellenar SOLO Imagen y Título de Pestaña (Ya no texto redundante)
-                    document.title = `${user.nombre} - ${global.empresa}`;
-                    document.getElementById('profile-img').src = user.foto;
-                    
-                    // Botones y Enlaces
-                    document.getElementById('btn-call').href = `tel:${user.telefono}`;
-                    document.getElementById('btn-wa').href = `https://wa.me/${user.whatsapp}`;
-                    document.getElementById('btn-email').href = `mailto:${user.email}`;
-                    document.getElementById('link-web').href = global.sitio_web;
-                    document.getElementById('text-web').textContent = global.sitio_web_texto;
-                    document.getElementById('link-insta').href = global.instagram_url;
-                    document.getElementById('text-insta').textContent = global.instagram_usuario;
-
-                    // 4. Galería con Clic
-                    const galleryContainer = document.getElementById('gallery-container');
-                    global.galeria.forEach(imgSrc => {
-                        const img = document.createElement('img');
-                        img.src = imgSrc;
-                        img.alt = "Imagen Galería";
-                        img.onclick = function(e) {
-                            e.stopPropagation(); 
-                            modal.style.display = "flex"; 
-                            modalImg.src = this.src; 
-                        };
-                        galleryContainer.appendChild(img);
-                    });
-
-                    // Botón Descarga
-                    document.getElementById('btn-save').addEventListener('click', (e) => {
-                        e.preventDefault(); downloadVCard(user, global);
-                    });
-
-                    loadingDiv.style.display = 'none'; contentDiv.style.display = 'block';
-                })
-                .catch(error => { loadingDiv.textContent = error.message; });
-        });
-
-        function downloadVCard(user, global) {
-            const nameParts = user.nombre.split(' ');
-            const firstName = nameParts[0];
-            const lastName = nameParts.slice(1).join(' ') || '';
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-N:${lastName};${firstName};;;
-FN:${user.nombre}
-ORG:${global.empresa}
-TITLE:${user.cargo}
-TEL;TYPE=CELL:${user.telefono}
-EMAIL;TYPE=WORK:${user.email}
-URL:${global.sitio_web}
-X-SOCIALPROFILE;TYPE=instagram:${global.instagram_usuario}
-END:VCARD`;
-            const blob = new Blob([vcard], { type: 'text/vcard' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url; link.download = `${user.nombre.replace(' ', '_')}.vcf`;
-            document.body.appendChild(link); link.click(); document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }
-    </script>
-</body>
-</html>
