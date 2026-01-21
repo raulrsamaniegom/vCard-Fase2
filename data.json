@@ -140,8 +140,8 @@
       "id": "Pao",
       "nombre": "Paola Vélez",
       "cargo": "PROJECT MANAGER",
-      "foto": "assets/img/Profile photo Paola Vélez 2026.png", 
-      "telefono": "+525554193277", 
+      "foto": "assets/img/Profile photo Paola Vélez 2026.png",
+      "telefono": "+525554193277",
       "email": "paola.velez@fase2.com.mx",
       "whatsapp": "525554193277"
     },
@@ -152,7 +152,7 @@
       "foto": "assets/img/Profile photo Fátima Quevedo 2026.png",
       "telefono": "+525538751320",
       "email": "fatima.quevedo@fase2.com.mx",
-      "whatsapp": "525538751320"
+      "whatsapp": "5538751320"
     },
     {
       "id": "Osma",
@@ -162,15 +162,14 @@
       "telefono": "+525545174054",
       "email": "osmani.maya@fase2.com.mx",
       "whatsapp": "525545174054"
-    }
-       },
+    },
     {
       "id": "LuisM",
       "nombre": "Luis Mandujano",
       "cargo": "Director Creativo",
-      "foto": "assets/img/Profile photo Luis Mandujano 2026",
+      "foto": "assets/img/Profile photo Luis Mandujano 2026.png",
       "telefono": "+525564318872",
-      "email": "osmani.maya@fase2.com.mx",
+      "email": "luis.mandujano@fase2.com.mx",
       "whatsapp": "525564318872"
     }
   ]
