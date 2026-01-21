@@ -163,5 +163,15 @@
       "email": "osmani.maya@fase2.com.mx",
       "whatsapp": "525545174054"
     }
+       },
+    {
+      "id": "LuisM",
+      "nombre": "Luis Mandujano",
+      "cargo": "Director Creativo",
+      "foto": "assets/img/Profile photo Luis Mandujano 2026",
+      "telefono": "+525564318872",
+      "email": "osmani.maya@fase2.com.mx",
+      "whatsapp": "525564318872"
+    }
   ]
 }
