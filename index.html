@@ -60,7 +60,6 @@
     </div>
 
     <script>
-        // Manejador de Errores Global (Si el script falla, esto te avisa)
         window.onerror = function(message, source, lineno, colno, error) {
             document.getElementById('loading').innerHTML = 
                 '<span style="color:red">ERROR DE SISTEMA:</span><br>' + message;
@@ -74,17 +73,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             const loadingDiv = document.getElementById('loading');
             
-            // INTENTO DE EJECUCIÓN
             try {
                 const contentDiv = document.getElementById('card-content');
                 
-                // 1. Obtener ID
                 const urlParams = new URLSearchParams(window.location.search);
                 const userId = urlParams.get('id');
 
                 if (!userId) { loadingDiv.textContent = 'Error: Falta ID en la URL.'; return; }
 
-                // 2. Cargar Datos
                 fetch('data.json')
                     .then(response => { 
                         if (!response.ok) throw new Error('No se pudo leer data.json'); 
@@ -96,16 +92,17 @@
 
                         if (!user) { loadingDiv.textContent = 'Usuario no encontrado en la base de datos.'; return; }
 
-                        // 3. Rellenar Datos
                         document.title = `${user.nombre} - ${global.empresa}`;
                         document.getElementById('profile-img').src = user.foto;
                         
-                        // --- LÓGICA DE BOTONES ---
+                        // --- LÓGICA DE BOTONES (AQUÍ ESTÁ EL AJUSTE PARA BELLA) ---
                         const btnCall = document.getElementById('btn-call');
                         const btnWa = document.getElementById('btn-wa');
 
                         if (btnCall) {
-                            if (user.telefono) {
+                            // Si tiene teléfono Y NO ES BELLA, muestra el botón.
+                            // Si es Bella, entra al "else" y se oculta.
+                            if (user.telefono && user.id !== 'Bella') {
                                 btnCall.href = `tel:${user.telefono}`;
                                 btnCall.style.display = 'flex';
                             } else {
@@ -129,7 +126,6 @@
                         document.getElementById('link-insta').href = global.instagram_url;
                         document.getElementById('text-insta').textContent = global.instagram_usuario;
 
-                        // 4. Galería
                         const galleryContainer = document.getElementById('gallery-container');
                         if (global.galeria) {
                             global.galeria.forEach(imgSrc => {
@@ -145,7 +141,6 @@
                             });
                         }
 
-                        // Botón Descarga
                         const btnSave = document.getElementById('btn-save');
                         if (btnSave) {
                             btnSave.addEventListener('click', (e) => {
@@ -153,17 +148,14 @@
                             });
                         }
 
-                        // ¡ÉXITO! MOSTRAR TARJETA
                         loadingDiv.style.display = 'none'; 
                         contentDiv.style.display = 'block';
                     })
                     .catch(error => { 
-                        // ERROR EN EL FETCH O JSON
                         loadingDiv.innerHTML = '<span style="color:red">ERROR DE DATOS:</span><br>' + error.message; 
                     });
 
             } catch (err) {
-                // ERROR EN EL CÓDIGO JS
                 loadingDiv.innerHTML = '<span style="color:red">ERROR DE CÓDIGO:</span><br>' + err.message;
             }
         });
